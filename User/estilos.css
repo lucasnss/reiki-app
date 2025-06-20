@@ -1,0 +1,541 @@
+/* ========================================
+   RESET Y ESTILOS BASE
+   ======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #4a4a4a;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========================================
+   ESTILOS DE PÁGINA DE LOGIN
+   ======================================== */
+.pagina-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.contenedor-login {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.tarjeta-login {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  animation: deslizarArriba 0.6s ease-out;
+}
+
+.tarjeta-login:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Animación de entrada */
+@keyframes deslizarArriba {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo h1 {
+  color: #667eea;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.logo p {
+  color: #666;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.formulario-login {
+  margin-bottom: 20px;
+}
+
+.grupo-formulario {
+  margin-bottom: 20px;
+}
+
+.grupo-formulario label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: 500;
+}
+
+.grupo-formulario input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e1e5e9;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #fafbfc;
+}
+
+.grupo-formulario input:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+}
+
+.mensaje-error {
+  background: #ffe6e6;
+  color: #d63031;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #d63031;
+  display: none;
+  animation: sacudir 0.5s ease-in-out;
+}
+
+/* Animación de sacudida para errores */
+@keyframes sacudir {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.boton-login {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.boton-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.boton-login:active {
+  transform: translateY(0);
+}
+
+.cargador-boton {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: girar 1s linear infinite;
+  margin-left: 10px;
+}
+
+/* Animación de giro para el cargador */
+@keyframes girar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.info-demo {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.info-demo code {
+  background: #e9ecef;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+  color: #495057;
+}
+
+/* ========================================
+   ESTILOS DE PÁGINA PRINCIPAL
+   ======================================== */
+.pagina-principal {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.encabezado {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  animation: deslizarAbajo 0.6s ease-out;
+}
+
+/* Animación de entrada del encabezado */
+@keyframes deslizarAbajo {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.encabezado .contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.marca-nav h2 {
+  color: #667eea;
+  font-weight: 300;
+}
+
+.boton-cerrar-sesion {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #ff7675 0%, #fd79a8 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.boton-cerrar-sesion:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 118, 117, 0.3);
+}
+
+/* ========================================
+   SECCIÓN HERO
+   ======================================== */
+.hero {
+  padding: 80px 0;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+}
+
+.contenido-hero h1 {
+  font-size: 3rem;
+  color: #2d3436;
+  margin-bottom: 20px;
+  font-weight: 300;
+  animation: aparecerArriba 0.8s ease-out 0.2s both;
+}
+
+.contenido-hero p {
+  font-size: 1.2rem;
+  color: #636e72;
+  max-width: 600px;
+  margin: 0 auto;
+  animation: aparecerArriba 0.8s ease-out 0.4s both;
+}
+
+/* Animación de aparición desde abajo */
+@keyframes aparecerArriba {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   SECCIÓN DE CURSOS
+   ======================================== */
+.cursos {
+  padding: 80px 0;
+}
+
+.titulo-seccion {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2d3436;
+  margin-bottom: 60px;
+  font-weight: 300;
+  animation: aparecerArriba 0.8s ease-out;
+}
+
+.grilla-cursos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.tarjeta-curso {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  animation: aparecerArriba 0.8s ease-out;
+}
+
+.tarjeta-curso:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Retrasos de animación escalonados para las tarjetas */
+.tarjeta-curso:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.tarjeta-curso:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.tarjeta-curso:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.tarjeta-curso:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.imagen-curso {
+  height: 120px;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradientes únicos para cada tarjeta de curso */
+.tarjeta-curso:nth-child(2) .imagen-curso {
+  background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+}
+
+.tarjeta-curso:nth-child(3) .imagen-curso {
+  background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+}
+
+.tarjeta-curso:nth-child(4) .imagen-curso {
+  background: linear-gradient(135deg, #fdbb2d 0%, #22c1c3 100%);
+}
+
+.icono-curso {
+  font-size: 3rem;
+  animation: flotar 3s ease-in-out infinite;
+}
+
+/* Animación de flotación para los iconos */
+@keyframes flotar {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.contenido-curso {
+  padding: 30px;
+}
+
+.contenido-curso h3 {
+  font-size: 1.5rem;
+  color: #2d3436;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.contenido-curso p {
+  color: #636e72;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.meta-curso {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.meta-curso span {
+  background: #f8f9fa;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  color: #495057;
+  font-weight: 500;
+}
+
+.boton-curso {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boton-curso:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* ========================================
+   PIE DE PÁGINA
+   ======================================== */
+.pie-pagina {
+  background: #2d3436;
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 50px;
+}
+
+.pie-pagina p {
+  opacity: 0.8;
+}
+
+/* ========================================
+   DISEÑO RESPONSIVO
+   ======================================== */
+@media (max-width: 768px) {
+  .contenido-hero h1 {
+    font-size: 2rem;
+  }
+
+  .contenido-hero p {
+    font-size: 1rem;
+  }
+
+  .titulo-seccion {
+    font-size: 2rem;
+  }
+
+  .grilla-cursos {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tarjeta-login {
+    padding: 30px 20px;
+  }
+
+  .encabezado .contenedor {
+    padding: 10px 20px;
+  }
+
+  .marca-nav h2 {
+    font-size: 1.2rem;
+  }
+
+  .boton-cerrar-sesion {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor-login {
+    padding: 10px;
+  }
+
+  .hero {
+    padding: 50px 0;
+  }
+
+  .cursos {
+    padding: 50px 0;
+  }
+
+  .contenido-curso {
+    padding: 20px;
+  }
+}
+
+/* ========================================
+   ESTADOS DE CARGA Y ANIMACIONES
+   ======================================== */
+.cargando {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.cargando .cargador-boton {
+  display: inline-block;
+}
+
+.cargando span {
+  opacity: 0.5;
+}
+
+/* Transiciones suaves para cambios de página */
+.transicion-pagina {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.transicion-pagina.activa {
+  opacity: 1;
+  transform: translateY(0);
+}
