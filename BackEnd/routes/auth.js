@@ -2,7 +2,9 @@ const express = require("express")
 const router = express.Router()
 const Usuario = require("../models/usuario.js")
 
-// Registro
+// ============================================
+// REGISTRO SIMPLE (ORIGINAL)
+// ============================================
 router.post("/registro", async (req, res) => {
   const { usuario, contraseña } = req.body
 
@@ -15,7 +17,9 @@ router.post("/registro", async (req, res) => {
   }
 })
 
-// Login
+// ============================================
+// LOGIN
+// ============================================
 router.post("/login", async (req, res) => {
   const { usuario, contraseña } = req.body
 
@@ -33,16 +37,3 @@ router.post("/login", async (req, res) => {
 })
 
 module.exports = router
-
-// Registro de nuevo usuario
-router.post("/registro", async (req, res) => {
-  const { usuario, contraseña } = req.body
-
-  try {
-    const nuevoUsuario = new Usuario({ usuario, contraseña })
-    await nuevoUsuario.save()
-    res.status(201).json({ mensaje: "Usuario registrado correctamente" })
-  } catch (error) {
-    res.status(400).json({ error: "Ese usuario ya existe o hubo un error" })
-  }
-})

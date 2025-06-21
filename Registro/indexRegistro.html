@@ -1,16 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Registro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Plataforma de Cursos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <h1>Registro de Usuario</h1>
-  <form id="registroForm">
-    <input type="text" id="usuario" placeholder="Usuario" required />
-    <input type="password" id="contraseña" placeholder="Contraseña" required />
-    <button type="submit">Registrarse</button>
-  </form>
-  <script src="registro.js"></script>
+    <div class="page-title">
+        <h1>Título</h1>
+    </div>
+    
+    <div class="container">
+        <div class="registro-card">
+            <div class="header">
+                <i class="fas fa-user-plus icon"></i>
+                <h2>Crear Cuenta</h2>
+                <p>Únete a nuestra plataforma de cursos</p>
+            </div>
+            
+            <form id="registroForm" class="registro-form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+                    <span class="error-message" id="nombreError"></span>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="confirmar_password" name="confirmar_password" placeholder="Confirmar contraseña" required>
+                    <span class="error-message" id="confirmarError"></span>
+                </div>
+                
+                <button type="submit" class="registro-btn">
+                    <span class="btn-text">Registrarse</span>
+                    <i class="fas fa-spinner fa-spin loading-icon" style="display: none;"></i>
+                </button>
+                
+                <div class="login-link">
+                    <p>¿Ya tienes cuenta? <a href="../LogIn/indexLog.html">Inicia sesión aquí</a></p>
+                </div>
+            </form>
+            
+            <div id="mensaje" class="mensaje"></div>
+            
+        </div>
+    </div>
+    <!-- Botón de cerrar -->
+<button class="close-btn" onclick="window.location.href='../inicio/indexInicio.html'">
+    <i class="fas fa-times"></i>
+</button>
+    
+    
+    <script src="registro.js"></script>
 </body>
 </html>

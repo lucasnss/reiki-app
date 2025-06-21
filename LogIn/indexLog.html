@@ -3,47 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGEARSE</title>
+    <title>Login - Plataforma de Cursos</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="login-page">
-    <!-- Login container with centered form -->
-    <div class="login-container">
-        <div class="login-card">
-            <div class="logo">
-                <h1>🌸 Reiki Tucumán</h1>
-                <p>Transforma tu vida a través del aprendizaje holístico</p>
+<body>
+    <div class="page-title">
+        <h1>Título</h1>
+    </div>
+    
+    <div class="container">
+        <div class="registro-card">
+            <div class="header">
+                <i class="fas fa-sign-in-alt icon"></i>
+                <h2>Iniciar Sesión</h2>
+                <p>Accede a tu cuenta</p>
             </div>
             
-            <!-- Login form with validation -->
-            <form id="loginForm" class="login-form">
-                <div class="form-group">
-                    <label for="username">Usuario</label>
-                    <input type="text" id="username" name="username" required>
+            <form id="loginForm" class="registro-form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" name="username" placeholder="Usuario" required>
+                    <span class="error-message" id="usernameError"></span>
                 </div>
                 
-                <div class="form-group">
-                    <label for="password">Contraseña</label>
-                    <input type="password" id="password" name="password" required>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                    <span class="error-message" id="passwordError"></span>
                 </div>
                 
                 <!-- Error message container (hidden by default) -->
                 <div id="errorMessage" class="error-message"></div>
                 
-                <button type="submit" class="login-btn">
-                    <span>Iniciar Sesión</span>
-                    <div class="btn-loader"></div>
+                <button type="submit" class="registro-btn">
+                    <span class="btn-text">Iniciar Sesión</span>
+                    <i class="fas fa-spinner fa-spin loading-icon" style="display: none;"></i>
                 </button>
+                
+                <div class="login-link">
+                    <p>¿No tenés una cuenta? <a href="../Registro/indexRegistro.html">Regístrate aquí</a></p>
+                </div>
             </form>
             
-            <!-- Demo credentials info -->
-            <div class="demo-info">
-                <p><strong>Credenciales de Prueba:</strong></p>
-                <p>Usuario: <code>admin</code></p>
-                <p>Contraseña: <code>1234</code></p>
-            </div>
+            <div id="mensaje" class="mensaje"></div>
         </div>
     </div>
+    <!-- Botón de cerrar -->
+<button class="close-btn" onclick="window.location.href='../inicio/indexInicio.html'">
+    <i class="fas fa-times"></i>
+</button>
     
     <script src="script.js"></script>
 </body>

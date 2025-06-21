@@ -145,7 +145,7 @@ function ocultarMensajeError() {
  * Mostrar estado de carga en el botón
  */
 function mostrarEstadoCarga() {
-  const botonLogin = document.querySelector(".login-btn")
+  const botonLogin = document.querySelector(".registro-btn")
   const spanTexto = botonLogin.querySelector("span")
   const cargador = botonLogin.querySelector(".btn-loader")
 

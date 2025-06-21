@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.page-title {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.page-title h1 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  width: 100%;
+  max-width: 450px;
+}
+
+.registro-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px 35px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.header .icon {
+  font-size: 3rem;
+  color: #b19cff;
+  margin-bottom: 15px;
+}
+
+.header h2 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.header p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.registro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  font-size: 1.1rem;
+  z-index: 2;
+  line-height: 1;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: all 0.3s ease;
+  outline: none;
+  line-height: 1.5;
+}
+
+.input-group input:focus {
+  border-color: #b19cff;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(177, 156, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.input-group input:hover {
+  box-shadow: 0 4px 12px rgba(177, 156, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: block;
+  min-height: 20px;
+}
+
+.registro-btn {
+  background: linear-gradient(135deg, #b19cff 0%, #9f7aea 100%);
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.registro-btn:hover {
+  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(177, 156, 255, 0.4);
+}
+
+.registro-btn:active {
+  transform: translateY(0);
+}
+
+.registro-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loading-icon {
+  margin-left: 8px;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.login-link p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.login-link a {
+  color: #b19cff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+  color: #9f7aea;
+  text-decoration: underline;
+}
+
+.mensaje {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  display: none;
+}
+
+.mensaje.success {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.mensaje.error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .page-title h1 {
+    font-size: 2rem;
+  }
+  
+  .registro-card {
+    padding: 30px 25px;
+    margin: 10px;
+  }
+
+  .header h2 {
+    font-size: 1.7rem;
+  }
+
+  .input-group input {
+    padding: 14px 14px 14px 42px;
+  }
+}
+
+/* Botón de cerrar */
+.close-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.close-btn i {
+  font-size: 1.2rem;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn:hover i {
+  color: #333;
+}
+
+.close-btn:active {
+  transform: scale(0.95) rotate(90deg);
+}
