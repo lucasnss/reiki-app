@@ -356,7 +356,7 @@ p {
 }
 
 /* ========================================
-   SECCIÓN SERVICIOS
+   SECCIÓN SERVICIOS - TARJETAS CON IMÁGENES
    ======================================== */
 .offerings {
   padding: 6rem 0;
@@ -373,11 +373,14 @@ p {
 .offering-card {
   background: white;
   border-radius: 20px;
-  padding: 2.5rem;
+  overflow: hidden;
   box-shadow: 0 10px 30px rgba(101, 67, 33, 0.1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   border: 1px solid rgba(160, 82, 45, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .offering-card:hover {
@@ -386,41 +389,51 @@ p {
   border-color: rgba(160, 82, 45, 0.3);
 }
 
-.card-icon {
-  margin-bottom: 1.5rem;
+/* Nueva estructura para imágenes */
+.card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
 }
 
-.icon-circle {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #a0522d 0%, #6b8e23 100%);
+.workshop-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.offering-card:hover .workshop-image {
+  transform: scale(1.05);
+}
+
+/* Contenido de la tarjeta */
+.card-content {
+  padding: 2rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-.icon {
-  font-size: 2rem;
-  filter: grayscale(100%) brightness(0) invert(1);
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .card-title {
   text-align: center;
   margin-bottom: 1rem;
   color: #654321;
+  font-size: 1.5rem;
 }
 
 .card-description {
   text-align: center;
   margin-bottom: 1.5rem;
   color: #8b7355;
+  line-height: 1.6;
 }
 
 .card-features {
   list-style: none;
   margin-bottom: 2rem;
+  flex-grow: 1;
 }
 
 .card-features li {
@@ -449,6 +462,7 @@ p {
   border-radius: 10px;
   font-weight: 500;
   transition: all 0.3s ease;
+  margin-top: auto;
 }
 
 .card-button:hover {
@@ -456,9 +470,18 @@ p {
   transform: translateY(-2px);
 }
 
+/* Eliminar estilos del ícono circular anterior */
+.card-icon,
+.icon-circle,
+.icon {
+  display: none;
+}
+
 /* ========================================
-   SECCIÓN ACERCA DE/VIDEO
+   RESTO DE ESTILOS (sin cambios)
    ======================================== */
+
+/* Sección Acerca de/Video */
 .about-video {
   padding: 6rem 0;
   background: white;
@@ -529,9 +552,7 @@ p {
   color: #8b7355;
 }
 
-/* ========================================
-   SECCIÓN PREGUNTAS FRECUENTES
-   ======================================== */
+/* Sección Preguntas Frecuentes */
 .faq {
   padding: 6rem 0;
   background: linear-gradient(135deg, #f4f1e8 0%, #ffffff 100%);
@@ -598,9 +619,7 @@ p {
   line-height: 1.7;
 }
 
-/* ========================================
-   SECCIÓN CONTACTO
-   ======================================== */
+/* Sección Contacto */
 .contact {
   padding: 6rem 0;
   background: white;
@@ -707,9 +726,7 @@ p {
   100% { transform: rotate(360deg); }
 }
 
-/* ========================================
-   PIE DE PÁGINA
-   ======================================== */
+/* Pie de Página */
 .footer {
   background: linear-gradient(135deg, #654321 0%, #5d4e37 100%);
   color: white;
@@ -884,6 +901,14 @@ p {
     margin: 0 auto;
   }
 
+  .card-image {
+    height: 180px;
+  }
+
+  .card-content {
+    padding: 1.5rem;
+  }
+
   .credentials {
     gap: 0.75rem;
   }
@@ -936,6 +961,14 @@ p {
 
   .section-header {
     margin-bottom: 2rem;
+  }
+
+  .card-image {
+    height: 160px;
+  }
+
+  .card-content {
+    padding: 1.25rem;
   }
 }
 

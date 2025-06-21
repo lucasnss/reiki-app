@@ -6,7 +6,7 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #deb887 0%, #8b7355 100%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -60,7 +60,7 @@ body {
 
 .header .icon {
   font-size: 3rem;
-  color: #b19cff;
+  color: #a0522d;
   margin-bottom: 15px;
 }
 
@@ -89,12 +89,14 @@ body {
 .input-group i {
   position: absolute;
   left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 15px;
   color: #9ca3af;
   font-size: 1.1rem;
   z-index: 2;
-  line-height: 1;
+  line-height: 1.5;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .input-group input {
@@ -107,17 +109,18 @@ body {
   transition: all 0.3s ease;
   outline: none;
   line-height: 1.5;
+  height: 54px;
 }
 
 .input-group input:focus {
-  border-color: #b19cff;
+  border-color: #a0522d;
   background: #fff;
-  box-shadow: 0 0 0 3px rgba(177, 156, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(160, 82, 45, 0.1);
   transform: translateY(-2px);
 }
 
 .input-group input:hover {
-  box-shadow: 0 4px 12px rgba(177, 156, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(160, 82, 45, 0.15);
   transform: translateY(-1px);
 }
 
@@ -130,7 +133,7 @@ body {
 }
 
 .registro-btn {
-  background: linear-gradient(135deg, #b19cff 0%, #9f7aea 100%);
+  background: linear-gradient(135deg, #a0522d 0%, #8b4513 100%);
   color: white;
   border: none;
   padding: 16px 24px;
@@ -145,9 +148,9 @@ body {
 }
 
 .registro-btn:hover {
-  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #8b4513 0%, #654321 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(177, 156, 255, 0.4);
+  box-shadow: 0 8px 25px rgba(160, 82, 45, 0.4);
 }
 
 .registro-btn:active {
@@ -175,14 +178,14 @@ body {
 }
 
 .login-link a {
-  color: #b19cff;
+  color: #a0522d;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .login-link a:hover {
-  color: #9f7aea;
+  color: #8b4513;
   text-decoration: underline;
 }
 
@@ -227,7 +230,6 @@ body {
   }
 }
 
-/* Botón de cerrar */
 .close-btn {
   position: fixed;
   top: 20px;
