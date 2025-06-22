@@ -4,7 +4,7 @@ const Usuario = require("../models/usuario")
 const router = express.Router()
 
 // ============================================
-// REGISTRO COMPLETO (NUEVO)
+// REGISTRO COMPLETO CON BCRYPT
 // ============================================
 router.post("/registro", async (req, res) => {
   console.log("📨 Nueva solicitud de registro recibida")

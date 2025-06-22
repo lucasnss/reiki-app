@@ -11,6 +11,7 @@ app.use(express.json())
 // IMPORTAR RUTAS
 // ============================================
 const authRoutes = require("./routes/auth")
+
 const registroRoutes = require("./routes/registro")
 
 // ============================================
